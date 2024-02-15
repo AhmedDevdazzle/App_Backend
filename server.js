@@ -2,7 +2,7 @@ import express from 'express'
 const app = express()
 import dotenv from 'dotenv';
 dotenv.config();
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 3000
 import { AttendenceModel} from './DB/Schema.js';
 import bodyParser from 'body-parser';
 app.use(bodyParser.json());
