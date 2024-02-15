@@ -1,15 +1,6 @@
 import mongoose from 'mongoose';
 import moment from 'moment-timezone';
 const mongodbURI = "mongodb+srv://ahmedradiantcortex:ahmedradiantcortex@cluster0.e8um3wo.mongodb.net/";
-const productSchema = new mongoose.Schema({
-    email : { type: String },
-    name : { type: String },
-    price: { type: String , required: true },
-    description : { type: String, required: true },
-    createdOn: { type: Date, default: Date.now },
-});
-export const userModel = mongoose.model('userModel', productSchema);
-
 const attendenceSchema = new mongoose.Schema({
     username : { type: String },
     password : { type: String },
@@ -21,10 +12,7 @@ const attendenceSchema = new mongoose.Schema({
 });
 export const AttendenceModel = mongoose.model('attendences', attendenceSchema);
 
-
-/////////////////////////////////////////////////////////////////////////////////////////////////
 mongoose.connect(mongodbURI);
-
 ////////////////mongodb connected disconnected events///////////////////////////////////////////////
 mongoose.connection.on('connected', function () {//connected
     console.log("Mongoose is connected");
@@ -47,4 +35,3 @@ process.on('SIGINT', function () {/////this function will run jst before app is 
         process.exit(0);
     });
 });
-////////////////mongodb connected disconnected events///////////////////////////////////////////////
