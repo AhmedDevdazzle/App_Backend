@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 import moment from 'moment-timezone';
 import dotenv from 'dotenv';
 dotenv.config();
+const mongodbURI = "mongodb+srv://ahmedradiantcortex:ahmedradiantcortex@cluster0.e8um3wo.mongodb.net/";
 const productSchema = new mongoose.Schema({
     email : { type: String },
     name : { type: String },
@@ -24,7 +25,7 @@ export const AttendenceModel = mongoose.model('Attendence', attendenceSchema);
 
 
 
-const mongodbURI = "mongodb+srv://ahmedradiantcortex:ahmedradiantcortex@cluster0.e8um3wo.mongodb.net/";
+
 /////////////////////////////////////////////////////////////////////////////////////////////////
 mongoose.connect(mongodbURI);
 
