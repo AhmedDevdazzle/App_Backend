@@ -7,6 +7,9 @@ import { AttendenceModel} from './DB/Schema.js';
 import bodyParser from 'body-parser';
 app.use(bodyParser.json());
 
+
+
+app.get("/" , (req,res) => res.send("Ahmed"))
 app.post('/attendance', async (req, res) => {
     try {
             const {username ,  password , attendence} = req.body;
