@@ -24,7 +24,7 @@ export const AttendenceModel = mongoose.model('Attendence', attendenceSchema);
 
 
 
-const mongodbURI = process.env.MONGODB_URL;
+const mongodbURI = "mongodb+srv://ahmedradiantcortex:ahmedradiantcortex@cluster0.e8um3wo.mongodb.net/?retryWrites=true&w=majority/";
 /////////////////////////////////////////////////////////////////////////////////////////////////
 mongoose.connect(mongodbURI);
 
