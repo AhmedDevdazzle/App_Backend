@@ -1,16 +1,6 @@
 import mongoose from 'mongoose';
-import moment from 'moment-timezone';
-import dotenv from 'dotenv';
-dotenv.config();
-const mongodbURI = "mongodb+srv://ahmedradiantcortex:ahmedradiantcortex@cluster0.e8um3wo.mongodb.net/";
-const productSchema = new mongoose.Schema({
-    email : { type: String },
-    name : { type: String },
-    price: { type: String , required: true },
-    description : { type: String, required: true },
-    createdOn: { type: Date, default: Date.now },
-});
-export const userModel = mongoose.model('userModel', productSchema);
+const mongodbURI = process.env.mongodbURI || "mongodb+srv://ahmedradiantcortex:ahmedradiantcortex@cluster0.e8um3wo.mongodb.net/";
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
 const attendenceSchema = new mongoose.Schema({
     username : { type: String },
@@ -23,12 +13,7 @@ const attendenceSchema = new mongoose.Schema({
 });
 export const AttendenceModel = mongoose.model('Attendence', attendenceSchema);
 
-
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////
 mongoose.connect(mongodbURI);
-
 ////////////////mongodb connected disconnected events///////////////////////////////////////////////
 mongoose.connection.on('connected', function () {//connected
     console.log("Mongoose is connected");
@@ -52,3 +37,4 @@ process.on('SIGINT', function () {/////this function will run jst before app is 
     });
 });
 ////////////////mongodb connected disconnected events///////////////////////////////////////////////
+
