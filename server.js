@@ -2,7 +2,7 @@ import express from 'express'
 const app = express()
 import dotenv from 'dotenv';
 dotenv.config();
-const PORT = process.env.PORT
+const PORT = process.env.PORT || "mongodb+srv://ahmedradiantcortex:ahmedradiantcortex@cluster0.e8um3wo.mongodb.net/?retryWrites=true&w=majority/";
 import Main from './Routes/Main.js'
 import { AttendenceModel, userModel } from './DB/Schema.js';
 import bodyParser from 'body-parser';
