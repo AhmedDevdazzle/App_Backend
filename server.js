@@ -1,7 +1,7 @@
 import express from 'express'
 const app = express()
 import dotenv from 'dotenv';
-dotenv.config();
+dotenv.config();     
 const PORT = process.env.PORT || 3000
 import { AttendenceModel} from './DB/Schema.js';
 import bodyParser from 'body-parser';
