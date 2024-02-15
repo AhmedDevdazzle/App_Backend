@@ -60,8 +60,7 @@ app.post('/login', async (req, res) => {
 
   try {
       // Query the database for the user with the provided username
-      const user = await AttendenceModel.findOne({ username });
-
+      const user = await AttendenceModel.find({ username });
       // Check if user exists and if the password matches
       if (user && user.password === password) {
           // Successful login
